@@ -33,10 +33,15 @@
       <a class="admin-global-trigger" data-global-trigger>{{ a() }}</a>{#
       #}<ul class="admin-global-items">{#
         #}{%- for item in items -%}
-          <li><a class="admin-global-item" data-item>{{ item }}</a></li>
+          <li><a class="admin-global-item" data-open="edit-office">{{ item }}</a></li>
         {%- endfor -%}{#
       #}</ul>
     </div>
   {% endif %}
+{% endmacro %}
 
+{% macro pageMenu(args) %}
+  <div class="a2-shell page-settings">
+    <button class="page-trigger" data-open="new-page">Page Settings</button>
+  </div>
 {% endmacro %}

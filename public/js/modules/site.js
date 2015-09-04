@@ -22,6 +22,15 @@ $( function() {
     $overlay.toggleClass('overlay--open', false);
   });
 
+  $(window).on('keydown', function(e) {
+    if (e.keyCode === 27) {
+      $('[data-screen]').each(function() {
+        $(this).toggleClass('screen--open', false);
+        $overlay.toggleClass('overlay--open', false);
+      });
+    }
+  })
+
   // ================================================================
   // SECTIONS
   // ================================================================
