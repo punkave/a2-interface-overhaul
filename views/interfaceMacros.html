@@ -10,11 +10,15 @@
   </div>
 {% endmacro %}
 
-{% macro tabs(items) %}
-  {% for item in items %}
-    <div class="tab {{ 'tab--active' if loop.first else '' }}">{{ item }}</div>
-  {% endfor %}
-  <div class="tab__controls">
-    <div class="tab__add">+</div><div class="tab__subtract">-</div>
+{% macro tabs(items, options) %}
+  <div class="tabs-container height-100">
+    {% for item in items %}
+      <div class="tab {{ 'tab--active' if loop.first else '' }}">{{ item }}</div>
+    {% endfor %}
   </div>
+  {% if not options.hideControls %}
+    <div class="tab__controls">
+      <div class="tab__add">+</div><div class="tab__subtract">-</div>
+    </div>
+  {% endif %}
 {% endmacro %}

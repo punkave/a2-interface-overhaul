@@ -18,10 +18,11 @@
     </div>
 
     <div class="screen__body">
-      {# tabs might go here? #}
-
       <div class="section" data-section="1">
-        <div class="inner">
+        <div class="tabs width-25 height-100">
+          {{ tabs(['Basic', 'Permissions'], { hideControls: true }) }}
+        </div>{#
+      #}<div class="tab-view width-75 height-100">
           {{ string('Title', 'My Great Office') }}
           {{ string('Description', 'It is great') }}
           <fieldset>
@@ -46,7 +47,10 @@
       </div>
 
       <div class="section hidden" data-section="3">
-        <div class="inner">
+      <div class="tabs width-25 height-100">
+          {{ tabs(["Li'l Beep", 'Buster']) }}
+        </div>{#
+      #}<div class="tab-view width-75 height-100">
           {{ string('Name', 'Lil Beep') }}
           {{ string('Description', 'Great Pet') }}
           {{ dropdown('Good Teeth?', [
