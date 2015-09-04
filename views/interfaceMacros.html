@@ -1,0 +1,20 @@
+{% macro screenHeader(contentType, screenName) %}
+  <div class="header clearfix">
+    <div class="inner">
+      <div class="header__controls">
+        <button data-close="{{ screenName }}">Cancel</button>
+        <button class="major">Create {{ contentType }}</button>
+      </div>
+      <h2>New {{ contentType }}</h2>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro tabs(items) %}
+  {% for item in items %}
+    <div class="tab {{ 'tab--active' if loop.first else '' }}">{{ item }}</div>
+  {% endfor %}
+  <div class="tab__controls">
+    <div class="tab__add">+</div><div class="tab__subtract">-</div>
+  </div>
+{% endmacro %}

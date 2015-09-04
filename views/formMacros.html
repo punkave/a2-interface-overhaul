@@ -1,0 +1,17 @@
+{% macro string(label, placeholder) %}
+  <fieldset>
+    <label for="">{{ label }}</label>
+    <input type="text" placeholder="{{ placeholder }}" />
+  </fieldset>
+{% endmacro %}
+
+{% macro dropdown(label, options) %}
+  <fieldset>
+    <label for="">{{ label }}</label>
+    <select>
+      {% for option in options %}
+        <option value="{{ option.value }}">{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </fieldset>
+{% endmacro %}

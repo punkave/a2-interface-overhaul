@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <title>prototype</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/site.css">
+
+  <meta property="og:image" content=""/>
+  <meta property="og:title" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+
+  <meta name="description" content="" />
+
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+<body {%block bodyData %}{% endblock %}>
+
+  {% block main %}
+  {% endblock %}
+
+  {% for asset in assets %}
+    <!-- <script src="http://connect.soundcloud.com/sdk.js"></script> -->
+    <script type="text/javascript" src="{{ asset }}"></script>
+  {% endfor %}
+
+  <!-- ga -->
+</body>
+</html>

@@ -1,0 +1,107 @@
+.overlay
+{
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: fade(black, 70%);
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity @time, visibility @time @time;
+
+  &.overlay--open
+  {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity @time, visibility @time;
+  }
+}
+
+.screen
+{
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  left: 50px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20%);
+  background-color: white;
+
+  transition: transform @time, opacity @time, visibility @time @time;
+
+  &.screen--open
+  {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+
+    transition: transform @time, opacity @time, visibility @time;
+  }
+
+  .screen__body
+  {
+    position: fixed;
+    top: 160px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 3rem;
+
+    overflow-y: scroll;
+  }
+}
+
+// ================================================================
+// HEADER
+// ================================================================
+
+.header
+{
+  padding: 2em 0;
+  background-color: @red;
+  color: white;
+}
+
+.header__controls
+{
+  float: right;
+}
+
+.context-bar
+{
+  padding: 1em;
+  background-color: #C9352D;
+  color: white;
+
+  border-bottom: 4px solid #80221F;
+}
+
+// ================================================================
+// SECTIONS
+// ================================================================
+
+.section
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+
+  transition: transform @time * 2;
+
+  .inner
+  {
+    padding-top: 3em;
+  }
+
+  &.hidden
+  {
+    display: block;
+    transform: translateX(100%);
+  }
+}

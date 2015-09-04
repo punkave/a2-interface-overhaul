@@ -1,0 +1,60 @@
+<div class="screen" data-screen="edit-office">
+    {{ screenHeader('Office', 'edit-office') }}
+    <div class="context-bar">
+      <div class="inner">
+
+        <div class="context-section" data-section="1">
+          You are editing an <span class="dashed pointer">Office (P'unk Avenue)</span>
+        </div>
+
+        <div class="context-section hidden" data-section="2">
+          You are editing an <span class="dashed pointer" data-open-section="1">Office (P'unk Avenue)</span> &rsaquo; <span class="dashed pointer">Staff Members</span>
+        </div>
+
+        <div class="context-section hidden" data-section="3">
+          You are editing an <span class="dashed pointer" data-open-section="1">Office (P'unk Avenue)</span> &rsaquo; <span class="dashed pointer" data-open-section="2">Staff Members (Stuart)</span> &rsaquo; <span class="dashed pointer">Pets</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen__body">
+      {# tabs might go here? #}
+
+      <div class="section" data-section="1">
+        <div class="inner">
+          {{ string('Title', 'My Great Office') }}
+          {{ string('Description', 'It is great') }}
+          <fieldset>
+            <label>Staff Members <span class="color--black">(7 items)</span></label>
+            <button class="major" data-open-section="2">Edit Staff Members &nbsp;&nbsp;&rsaquo;</button>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="section hidden" data-section="2">
+        <div class="tabs width-25 height-100">
+          {{ tabs(['Stuart', 'Kyle', 'Sam', 'Jan', 'Matt', 'Priya', 'Kylee']) }}
+        </div>{#
+      #}<div class="tab-view width-75 height-100">
+          {{ string('Name', 'Stuart') }}
+          {{ string('Job Description', 'Great Person') }}
+          <fieldset>
+            <label>Pets <span class="color--black">(2 items)</span></label>
+            <button class="major" data-open-section="3">Edit Pets &nbsp;&nbsp;&rsaquo;</button>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="section hidden" data-section="3">
+        <div class="inner">
+          {{ string('Name', 'Lil Beep') }}
+          {{ string('Description', 'Great Pet') }}
+          {{ dropdown('Good Teeth?', [
+            { label: 'Yes', value: 'yes' },
+            { label: 'No', value: 'no' }
+          ]) }}
+        </div>
+      </div>
+
+    </div>
+</div>

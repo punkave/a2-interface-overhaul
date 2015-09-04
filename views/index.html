@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% include 'interfaceMacros.html' %}
+{% include 'formMacros.html' %}
+
+{% block main %}
+  <div class="block">
+    <div class="inner">
+
+      <button class="major" data-open="new-page">New Page</button>
+
+      <button class="major" data-open="edit-office">Edit Office</button>
+
+      <div class="overlay"></div>
+
+      {% include 'screens/newPage.html' %}
+      {% include 'screens/office.html' %}
+
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="screen" data-screen="new-page">
+    {{ screenHeader('Page', 'new-page') }}
+
+    <div class="screen__body">
+      {# tabs might go here? #}
+      <div class="inner">
+
+        {{ string('Title', 'My Great Page') }}
+
+        {{ dropdown('Page Type', [
+          { label: 'Default Page', value: 'default' },
+          { label: 'Styleguide', value: 'styleguide' }
+        ]) }}
+
+        {{ dropdown('Published', [
+          { label: 'Yes', value: 'yes' },
+          { label: 'No', value: 'no' }
+        ]) }}
+
+        {{ string('SEO Description', 'Puppies, internet, gifs') }}
+
+        {{ string('Tags') }}
+
+      </div>
+    </div>
+</div>

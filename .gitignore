@@ -1,0 +1,9 @@
+/node_modules/
+/public/js/vendor/
+/public/audio/
+/public/images/canvas/
+/public/js/_site.js
+/public/css/site.css
+/data/
+.DS_Store
+npm-debug.log
