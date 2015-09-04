@@ -3,24 +3,28 @@
 
     <div class="screen__body">
       {# tabs might go here? #}
-      <div class="inner">
 
-        {{ string('Title', 'My Great Page') }}
+      <div class="section" data-section="1">
+        <div class="tabs width-25 height-100">
+          {{ tabs(['Basic', 'Permissions'], { hideControls: true }) }}
+        </div>{#
+      #}<div class="tab-view width-75 height-100">
+          {{ string('Title', 'My Great Page') }}
 
-        {{ dropdown('Page Type', [
-          { label: 'Default Page', value: 'default' },
-          { label: 'Styleguide', value: 'styleguide' }
-        ]) }}
+          {{ dropdown('Page Type', [
+            { label: 'Default Page', value: 'default' },
+            { label: 'Styleguide', value: 'styleguide' }
+          ]) }}
 
-        {{ dropdown('Published', [
-          { label: 'Yes', value: 'yes' },
-          { label: 'No', value: 'no' }
-        ]) }}
+          {{ dropdown('Published', [
+            { label: 'Yes', value: 'yes' },
+            { label: 'No', value: 'no' }
+          ]) }}
 
-        {{ string('SEO Description', 'Puppies, internet, gifs') }}
+          {{ string('SEO Description', 'Puppies, internet, gifs') }}
 
-        {{ string('Tags') }}
-
+          {{ string('Tags') }}
+        </div>
       </div>
     </div>
 </div>

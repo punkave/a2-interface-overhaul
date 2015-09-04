@@ -24,6 +24,7 @@
   right: 50px;
   bottom: 50px;
   left: 50px;
+  z-index: 2;
 
   opacity: 0;
   visibility: hidden;
@@ -39,6 +40,11 @@
     visibility: visible;
 
     transition: transform @time, opacity @time, visibility @time;
+  }
+
+  &.screen--preview
+  {
+    transform: translateY(93%);
   }
 
   .screen__body
@@ -145,3 +151,24 @@
 // PREVIEW
 // ================================================================
 
+.overlay-preview
+{
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 1;
+
+  border: 32px solid @red;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity @time, visibility @time @time;
+
+  &.active
+  {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity @time, visibility @time;
+  }
+}

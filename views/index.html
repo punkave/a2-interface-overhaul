@@ -4,7 +4,7 @@
 {% include 'formMacros.html' %}
 
 {% block main %}
-	
+
   <div class="block page">
 		{{ globalMenu() }}
 		{{ pageMenu() }}
@@ -18,6 +18,9 @@
 
       {% include 'screens/newPage.html' %}
       {% include 'screens/office.html' %}
+      {% include 'screens/manageOffice.html' %}
 
   </div>
+
+  <div class="overlay-preview"></div>
 {% endblock %}

@@ -9,9 +9,14 @@ $( function() {
   // open a screen
 
   $('[data-open]').on('click', function(e) {
-    $('[data-screen="' + $(this).attr('data-open') + '"]')
-      .toggleClass('screen--open', true);
+    var $screen = $('[data-screen="' + $(this).attr('data-open') + '"]');
+
+    $screen.toggleClass('screen--open', true);
     $overlay.toggleClass('overlay--open', true);
+
+    $screen.find('.screen__body').css({
+      top: $screen.find('.header').outerHeight() + $screen.find('.context-bar').outerHeight() + 'px'
+    });
   });
 
   // close a screen
@@ -70,11 +75,29 @@ $( function() {
   // ================================================================
 
   $('[data-preview-control]').on('click', function(e) {
-    $(this)
-      .toggleClass('fa-eye')
-      .toggleClass('fa-eye-slash');
-
-    $('[data-preview]').toggleClass('preview--open');
+    togglePreview();
+    e.stopPropagation();
   });
+
+  $('[data-close-preview]').on('click', function(e) {
+    if($('.screen--preview').length) {
+      togglePreview(false);
+    }
+  });
+
+  function togglePreview(open) {
+    $(this)
+      .toggleClass('fa-eye', open)
+      .toggleClass('fa-eye-slash', !open);
+
+    $('.overlay-preview').toggleClass('active', open);
+
+    $('.a2-global-control, .hide-on-preview').toggleClass('hidden', open);
+
+    $('.screen--open').toggleClass('screen--preview', open);
+
+                                               // sorry it's a prototype
+    $('.overlay').toggleClass('overlay--open', open !== undefined ? true : false );
+  }
 
 });
