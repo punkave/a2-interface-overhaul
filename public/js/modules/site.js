@@ -70,17 +70,29 @@ $( function() {
   // ================================================================
 
   $('[data-preview-control]').on('click', function(e) {
-    $(this)
-      .toggleClass('fa-eye')
-      .toggleClass('fa-eye-slash');
-
-    $('.overlay-preview').toggleClass('active');
-
-    $('.a2-global-control, .hide-on-preview').toggleClass('hidden');
-
-    $('.screen--open').toggleClass('screen--preview');
-
-    $('.overlay').toggleClass('overlay--open');
+    togglePreview();
+    e.stopPropagation();
   });
+
+  $('[data-close-preview]').on('click', function(e) {
+    if($('.screen--preview').length) {
+      togglePreview(false);
+    }
+  });
+
+  function togglePreview(open) {
+    $(this)
+      .toggleClass('fa-eye', open)
+      .toggleClass('fa-eye-slash', !open);
+
+    $('.overlay-preview').toggleClass('active', open);
+
+    $('.a2-global-control, .hide-on-preview').toggleClass('hidden', open);
+
+    $('.screen--open').toggleClass('screen--preview', open);
+
+                                               // sorry it's a prototype
+    $('.overlay').toggleClass('overlay--open', open !== undefined ? true : false );
+  }
 
 });
