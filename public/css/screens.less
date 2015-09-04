@@ -28,7 +28,7 @@
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20%);
+  transform: scale(1.2);
   background-color: white;
 
   transition: transform @time, opacity @time, visibility @time @time;
@@ -40,6 +40,14 @@
     visibility: visible;
 
     transition: transform @time, opacity @time, visibility @time;
+  }
+
+  &.screen--recede
+  {
+    transform: scale(0.8);
+    opacity: 0;
+    // z-index: 1;
+    pointer-events: none;
   }
 
   &.screen--preview

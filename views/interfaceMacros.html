@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="header__controls">
         <button class="hide-on-preview" data-close="{{ screenName }}">Cancel</button>
-        <button class="major hide-on-preview">Create {{ contentType }}</button>
+        <button class="major hide-on-preview" {{ options.mainButtonAttr }}>{{ options.label if options.label else ('Create ' + contentType )}}</button>
       </div>
       <div class="clearfix header__info">
         {% if options.preview %}
@@ -33,14 +33,15 @@
 
 {% macro globalMenu(items) %}
   {% if not items %}
-    {% set items = ['Projects', 'Timeline', 'People', 'Tags', 'My Account'] %}
     <div class="a2-shell admin-global a2-global-control">
       <a class="admin-global-trigger" data-global-trigger>{{ a() }}</a>{#
-      #}<ul class="admin-global-items">{#
-        #}{%- for item in items -%}
-          <li><a class="admin-global-item" data-open="edit-office">{{ item }}</a></li>
-        {%- endfor -%}{#
-      #}</ul>
+    #}<ul class="admin-global-items">
+        <li><a class="admin-global-item" data-open="manage-offices">Offices</a></li>
+        <li><a class="admin-global-item" data-open="edit-office">Timeline</a></li>
+        <li><a class="admin-global-item" data-open="edit-office">People</a></li>
+        <li><a class="admin-global-item" data-open="edit-office">Tags</a></li>
+        <li><a class="admin-global-item" data-open="edit-office">My Account</a></li>
+      </ul>
     </div>
   {% endif %}
 {% endmacro %}

@@ -24,7 +24,14 @@ $( function() {
   $('[data-close]').on('click', function(e) {
     $('[data-screen="' + $(this).attr('data-close') + '"]')
       .toggleClass('screen--open', false);
-    $overlay.toggleClass('overlay--open', false);
+
+    var $recededScreens = $('.screen--recede');
+
+    if($recededScreens.length) {
+      $recededScreens.removeClass('screen--recede');
+    } else {
+      $overlay.toggleClass('overlay--open', false);
+    }
   });
 
   $(window).on('keydown', function(e) {
@@ -34,7 +41,15 @@ $( function() {
         $overlay.toggleClass('overlay--open', false);
       });
     }
-  })
+  });
+
+  // opening a second modal
+
+  $('[data-open-another]').on('click', function(e) {
+    var targetScreen = $(this).attr('data-open-another');
+    $(this).parents('.screen').toggleClass('screen--recede');
+    $('[data-screen="' + targetScreen + '"]').toggleClass('screen--open');
+  });
 
   // ================================================================
   // SECTIONS
