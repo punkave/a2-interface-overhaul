@@ -74,7 +74,13 @@ $( function() {
       .toggleClass('fa-eye')
       .toggleClass('fa-eye-slash');
 
-    $('[data-preview]').toggleClass('preview--open');
+    $('.overlay-preview').toggleClass('active');
+
+    $('.a2-global-control, .hide-on-preview').toggleClass('hidden');
+
+    $('.screen--open').toggleClass('screen--preview');
+
+    $('.overlay').toggleClass('overlay--open');
   });
 
 });

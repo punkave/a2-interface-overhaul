@@ -2,8 +2,8 @@
   <div class="header clearfix">
     <div class="inner">
       <div class="header__controls">
-        <button data-close="{{ screenName }}">Cancel</button>
-        <button class="major">Create {{ contentType }}</button>
+        <button class="hide-on-preview" data-close="{{ screenName }}">Cancel</button>
+        <button class="major hide-on-preview">Create {{ contentType }}</button>
       </div>
       {% if options.preview %}
         <i class="fa fa-eye fa-2x header__preview-button" data-preview-control></i>
@@ -29,7 +29,7 @@
 {% macro globalMenu(items) %}
   {% if not items %}
     {% set items = ['Projects', 'Timeline', 'People', 'Tags', 'My Account'] %}
-    <div class="a2-shell admin-global">
+    <div class="a2-shell admin-global a2-global-control">
       <a class="admin-global-trigger" data-global-trigger>{{ a() }}</a>{#
       #}<ul class="admin-global-items">{#
         #}{%- for item in items -%}
@@ -41,7 +41,7 @@
 {% endmacro %}
 
 {% macro pageMenu(args) %}
-  <div class="a2-shell page-settings">
+  <div class="a2-shell page-settings a2-global-control">
     <button class="page-trigger" data-open="new-page">Page Settings</button>
   </div>
 {% endmacro %}
