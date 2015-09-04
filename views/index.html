@@ -4,16 +4,9 @@
 {% include 'formMacros.html' %}
 
 {% block main %}
-	{% set items = ['Projects', 'Timeline', 'People', 'Tags', 'My Account']%}
+	
   <div class="block">
-  	<div class="a2-shell admin-global">
-  		<a class="admin-global-trigger" data-global-trigger>{{ a() }}</a>{#
-  		#}<ul class="admin-global-items">{#
-  			#}{%- for item in items -%}
-					<li><a class="admin-global-item" data-item>{{ item }}</a></li>	
-  			{%- endfor -%}{#
-  		#}</ul>
-  	</div>
+		{{ globalMenu() }}
     <div class="inner">
 
       <button class="major" data-open="new-page">New Page</button>
