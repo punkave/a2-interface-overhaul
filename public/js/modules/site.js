@@ -9,9 +9,14 @@ $( function() {
   // open a screen
 
   $('[data-open]').on('click', function(e) {
-    $('[data-screen="' + $(this).attr('data-open') + '"]')
-      .toggleClass('screen--open', true);
+    var $screen = $('[data-screen="' + $(this).attr('data-open') + '"]');
+
+    $screen.toggleClass('screen--open', true);
     $overlay.toggleClass('overlay--open', true);
+
+    $screen.find('.screen__body').css({
+      top: $screen.find('.header').outerHeight() + $screen.find('.context-bar').outerHeight() + 'px'
+    });
   });
 
   // close a screen
