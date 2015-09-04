@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% include 'interfaceMacros.html' %}
+{% include 'svg.html' %}
 {% include 'formMacros.html' %}
 
 {% block main %}
+	
   <div class="block">
+		{{ globalMenu() }}
     <div class="inner">
 
       <button class="major" data-open="new-page">New Page</button>
