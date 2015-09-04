@@ -29,13 +29,16 @@ $( function() {
   // go to a section
 
   $('[data-open-section]').on('click', function(e) {
-    $('[data-section]').addClass('hidden');
+    $('[data-section]')
+      .addClass('hidden')
+      .removeClass('hidden--left');
 
     var target = +$(this).attr('data-open-section');
 
     for(var i = 0; i <= target; i++) {
       $('.section[data-section="' + i + '"]')
-        .toggleClass('hidden', false);
+        .toggleClass('hidden', false)
+        .toggleClass('hidden--left', i < target);
     }
 
     $('.context-section[data-section="' + target + '"]')
