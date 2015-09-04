@@ -56,4 +56,16 @@ $( function() {
     $(this).addClass('tab--active').siblings().removeClass('tab--active');
   });
 
+  // ================================================================
+  // PREVIEW
+  // ================================================================
+
+  $('[data-preview-control]').on('click', function(e) {
+    $(this)
+      .toggleClass('fa-eye')
+      .toggleClass('fa-eye-slash');
+
+    $('[data-preview]').toggleClass('preview--open');
+  });
+
 });

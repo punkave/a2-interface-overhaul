@@ -44,7 +44,7 @@
   .screen__body
   {
     position: fixed;
-    top: 160px;
+    top: 155px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -68,6 +68,17 @@
 .header__controls
 {
   float: right;
+}
+
+.header__preview-button + .header__title
+{
+  .inline--top;
+  margin-left: 1rem;
+}
+
+.header__preview-button
+{
+  cursor: pointer;
 }
 
 .context-bar
@@ -110,3 +121,8 @@
     transform: translate3d(-100%, 0, 0);
   }
 }
+
+// ================================================================
+// PREVIEW
+// ================================================================
+

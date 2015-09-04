@@ -1,12 +1,14 @@
-{% macro screenHeader(contentType, screenName) %}
+{% macro screenHeader(contentType, screenName, options) %}
   <div class="header clearfix">
     <div class="inner">
       <div class="header__controls">
         <button data-close="{{ screenName }}">Cancel</button>
         <button class="major">Create {{ contentType }}</button>
       </div>
-      <i class="fa fa-eye"></i>
-      <h2 class="inline">New {{ contentType }}</h2>
+      {% if options.preview %}
+        <i class="fa fa-eye fa-2x header__preview-button" data-preview-control></i>
+      {% endif %}
+      <h2 class="header__title">New {{ contentType }}</h2>
     </div>
   </div>
 {% endmacro %}
@@ -31,7 +33,7 @@
       <a class="admin-global-trigger" data-global-trigger>{{ a() }}</a>{#
       #}<ul class="admin-global-items">{#
         #}{%- for item in items -%}
-          <li><a class="admin-global-item" data-item>{{ item }}</a></li>  
+          <li><a class="admin-global-item" data-item>{{ item }}</a></li>
         {%- endfor -%}{#
       #}</ul>
     </div>
