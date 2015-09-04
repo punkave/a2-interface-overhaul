@@ -51,6 +51,7 @@
     padding-top: 3rem;
 
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 
@@ -60,14 +61,30 @@
 
 .header
 {
-  padding: 2em 0;
+  padding: 2.5em 0;
   background-color: @red;
   color: white;
 }
 
 .header__controls
 {
-  float: right;
+  // float: right;
+  position: absolute;
+  top: 30px;
+  right: 10%;
+}
+
+.header__title,
+.header__instructions
+{
+  float: left;
+  display: inline-block;
+}
+
+.header__instructions
+{
+  margin-left: 0.5em;
+  max-width: 400px;
 }
 
 .context-bar

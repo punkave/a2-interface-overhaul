@@ -5,8 +5,13 @@
         <button data-close="{{ screenName }}">Cancel</button>
         <button class="major">Create {{ contentType }}</button>
       </div>
-      <i class="fa fa-eye"></i>
-      <h2 class="inline">New {{ contentType }}</h2>
+      <div class="clearfix header__info">
+        <i class="fa fa-eye"></i>
+        <h2 class="header__title">New {{ contentType }}</h2>
+        <p class="header__instructions">
+          Authors often misinterpret the waterfall as a strongish gorilla, when in actuality it feels more like a misused flavor.
+        </p>
+      </div>
     </div>
   </div>
 {% endmacro %}
