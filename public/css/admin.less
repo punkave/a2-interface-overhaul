@@ -1,0 +1,47 @@
+
+.admin-global
+{
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+.admin-global-trigger,
+.admin-global-items
+{
+	float: left;
+	margin: 0;
+}
+
+.admin-global-trigger
+{
+	padding: 20px;
+}
+
+.admin-global-item
+{
+	padding: 30px 20px;
+	padding-top: 35px;
+}
+
+.admin-global,
+.admin-global * { display: inline-block; }
+
+.admin-global
+{
+	background: @red;
+	color: white;
+	font-family: 'Clear Sans', sans-serif;
+	font-weight: 100;
+	font-size: 16px;
+}
+
+.admin-global-item
+{
+	text-align: center;
+	&:hover
+	{
+		cursor: pointer;
+		background-color: darken(@red, 10%);
+	}
+}
