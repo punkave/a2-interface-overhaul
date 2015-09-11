@@ -116,6 +116,12 @@ $( function() {
     $('.screen--open').toggleClass('screen--preview', open);
 
     $('.overlay').toggleClass('overlay--open');
+
+    if( $('.screen--preview').length ) {
+      $('body').animate({
+        scrollTop: $('[data-preview-target]').position().top - 100
+      });
+    }
   }
 
   // ================================================================
