@@ -1,18 +1,54 @@
-<div class="screen" data-screen="manage-offices">
+{% macro row(title) %}
+  <tr>
+    <td><input type="checkbox" data-check></td>
+    <td>{{ title }}</td>
+    <td>5/14/2015</td>
+    <td>Stuart Romanek</td>
+    <td>Books, Media</td>
+    <td class="color--red">Move to Trash</td>
+  </tr>
+{% endmacro -%}
+
+<div class="screen manage-offices-screen" data-screen="manage-offices">
     {{ screenHeader('Manage Offices', 'manage-offices', {
       label: 'New Office',
       mainButtonAttr: 'data-open-another=edit-office'
     }) }}
+    <div class="context-bar">
+      <div class="inner">
+        <input type="search" class="context-bar__search">
+      </div>
+    </div>
 
     <div class="screen__body">
       <div class="inner">
 
         <table>
-          <tr>
-            <th>Hi</th><th>hey</th>
-          </tr>
+          <thead>
+            <tr>
+              <th><input type="checkbox" data-check-all></th>
+              <th>Title</th>
+              <th>Updated</th>
+              <th>Author</th>
+              <th>Tags</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ row('Framed in a different way.') }}
+            {{ row('Before numerics, sampans were only cheques.') }}
+            {{ row('An antique alphabet is a stomach of the mind.') }}
+            {{ row('A vegetarian sees a great-grandmother as an unfit plate.') }}
+            {{ row("Few can name a ribless iron.") }}
+          </tbody>
         </table>
+      </div>
 
+      <div class="screen__table-controls">
+        <div class="inner">
+          <button class="a2-shell screen__table-control" data-table-control>Publish Selected <span data-item-count>(0)</span></button>
+          <button class="a2-shell screen__table-control" data-table-control>Trash Selected <span data-item-count>(0)</span></button>
+        </div>
       </div>
     </div>
 </div>

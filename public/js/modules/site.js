@@ -36,10 +36,14 @@ $( function() {
 
   $(window).on('keydown', function(e) {
     if (e.keyCode === 27) {
-      $('[data-screen]').each(function() {
-        $(this).toggleClass('screen--open', false);
+      // if there is a receding screen, only close one layer
+      if( $('.screen--recede').length ) {
+        $('.screen--open:not(.screen--recede)').removeClass('screen--open');
+        $('.screen--recede').removeClass('screen--recede');
+      } else {
+        $('.screen--open').removeClass('screen--open');
         $overlay.toggleClass('overlay--open', false);
-      });
+      }
     }
   });
 
@@ -96,7 +100,7 @@ $( function() {
 
   $('[data-close-preview]').on('click', function(e) {
     if($('.screen--preview').length) {
-      togglePreview(false);
+      togglePreview();
     }
   });
 
@@ -111,8 +115,26 @@ $( function() {
 
     $('.screen--open').toggleClass('screen--preview', open);
 
-                                               // sorry it's a prototype
-    $('.overlay').toggleClass('overlay--open', open !== undefined ? true : false );
+    $('.overlay').toggleClass('overlay--open');
   }
+
+  // ================================================================
+  // MANAGE VIEW CHECKBOXES
+  // ================================================================
+
+  $('[data-check-all]').on('change', function(e) {
+    var isChecked = this.checked;
+    $('[data-check]').each( function() {
+      this.checked = isChecked;
+    });
+  });
+
+  $('[data-check-all], [data-check]').on('change', function(e) {
+    // get the total number of checked boxes
+    var count = $('[data-check]:checked').length;
+    $('[data-item-count]').text('(' + count + ')');
+
+    $('[data-table-control]').toggleClass('active', !!count);
+  });
 
 });
