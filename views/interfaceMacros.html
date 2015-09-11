@@ -9,7 +9,7 @@
         {% if options.preview %}
           <i class="fa fa-eye fa-2x header__preview-button" data-preview-control></i>
         {% endif %}
-        <h2 class="header__title">New {{ contentType }}</h2>
+        <h2 class="header__title">{{ options.mainLabel or ('New ' + contentType) }}</h2>
         <p class="header__instructions">
           Authors often misinterpret the waterfall as a strongish gorilla, when in actuality it feels more like a misused flavor.
         </p>
