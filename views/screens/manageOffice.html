@@ -16,7 +16,18 @@
     }) }}
     <div class="context-bar">
       <div class="inner">
-        <input type="search" class="context-bar__search">
+        <div class="context-bar__filters">
+          <ul class="context-bar__filter-set" data-filter-set>{#
+            #}<li><a class="active" href="#">Live</a></li>{#
+            #}<li><a href="#">Draft</a></li>{#
+          #}</ul>
+          <ul class="context-bar__filter-set" data-filter-set>{#
+            #}<li><a href="#">Published</a></li>{#
+            #}<li><a href="#">Draft</a></li>{#
+            #}<li><a class="active" href="#">Both</a></li>{#
+          #}</ul> 
+        </div>
+        <input type="search" class="context-bar__search" placeholder="Search Somethin'">
       </div>
     </div>
 
